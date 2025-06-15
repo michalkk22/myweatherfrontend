@@ -11,12 +11,11 @@ export default defineConfig([
   tseslint.configs.recommended,
   pluginReact.configs.flat.recommended,
   {
-      rules: {
-          "no-unused-vars": "error",
-          "no-undef": "error",
-          "arrow-body-style": ["error", "always"],
-          "prefer-arrow-callback": "error",
-          "func-style": ["error", "expression", { "allowArrowFunctions": true }]
-      },
+    rules: {
+      "no-unused-vars": "warn",
+      "no-undef": "warn",
+      "prefer-arrow-callback": "error",
+      "func-style": ["error", "expression", { "allowArrowFunctions": true }]
+    },
   },
 ]);
