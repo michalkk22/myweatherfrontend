@@ -1,6 +1,8 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { LocationType } from "../../types";
 import { ForecastDataType } from "./types";
+import ForecastTableRow from "./ForecastTableRow";
+import "./style.css"
 
 const ForecastTable = ({location}:{location: LocationType}) => {
     const [forecastData, setForecastData] = useState<Array<ForecastDataType> | null>(null);
@@ -18,7 +20,9 @@ const ForecastTable = ({location}:{location: LocationType}) => {
     },[location]);
 
     return <div className="forecast-table-container">
-        {forecastData ? <div>{forecastData[0].date}</div>
+        {forecastData ? (
+            forecastData.map((element) => <ForecastTableRow key={element.date} data={element} />)
+        )
         : <div>Loading...</div>}
     </div>
 }

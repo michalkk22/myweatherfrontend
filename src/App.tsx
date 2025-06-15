@@ -14,7 +14,7 @@ const App = () => {
   }, []);
 
   return (
-    <div>
+    <div className="main-container">
       <ForecastTable location={location} />
       <Footer location={location} />
     </div>
