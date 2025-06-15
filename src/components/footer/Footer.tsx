@@ -5,7 +5,8 @@ const Footer = () => {
     const [footerData, setFooterData] = useState<FooterDataType | null>(null);
 
     const getFooterData = () => {
-        fetch('http://localhost:8080/week/summary?latitude=52.1&longitude=21.0')
+        // eslint-disable-next-line no-undef
+        fetch(`${process.env.REACT_APP_API_URL}/week/summary?latitude=52.1&longitude=21.0`)
         .then(response => response.json())
         .then(data => setFooterData(data))
         .catch(error => console.error(`getFooterData error: ${error}`));
