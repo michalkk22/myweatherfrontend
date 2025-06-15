@@ -20,9 +20,9 @@ const Footer = ({ location }: { location: LocationType }) => {
 
     const roundAndFormatTemperature = (temp: number) => `${temp.toFixed(1)} \u00b0C`;
 
-    return <div className='footer-main'>
-        {footerData ? <div className='footer-weather'>
-            <div className='footer-items'>
+    return <div className="footer-main">
+        {footerData ? <div className="footer-weather">
+            <div className="footer-items">
                 <div>Min Temp: {roundAndFormatTemperature(footerData.temperatureMin)}</div>
                 <div>Max Temp: {roundAndFormatTemperature(footerData.temperatureMax)}</div>
                 <div>Avg Pressure: {footerData.pressure.toFixed(0)} hPa</div>

@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
-import Footer from './components/footer/Footer';
+import Footer from './components/Footer/Footer';
 import { LocationType } from './types';
+import ForecastTable from './components/ForecastTable/ForecastTable';
 
 const App = () => {
   const [location, setLocation] = useState<LocationType>({ latitude: 52.1, longitude: 21.0 }); // Warsaw is default if no geolocation permission is given
@@ -14,6 +15,7 @@ const App = () => {
 
   return (
     <div>
+      <ForecastTable location={location} />
       <Footer location={location} />
     </div>
   );
