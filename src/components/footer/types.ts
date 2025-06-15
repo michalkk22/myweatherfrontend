@@ -3,5 +3,5 @@ export type FooterDataType = {
     sunshine: number;
     temperatureMax: number;
     temperatureMin: number;
-    weather: string;
+    weather: string[];
 };

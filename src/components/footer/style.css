@@ -1,0 +1,22 @@
+.footer-main {
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+    border: 1px solid black;
+}
+
+.footer-items {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.footer-weather {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 10px 0 10px 0;
+}
