@@ -1,7 +1,8 @@
 .footer-main {
     width: 100%;
-    position: absolute;
-    bottom: 0;
+    margin-top: auto;
+    /* position: absolute;
+    bottom: 0; */
     border-top: 1px solid var(--text-color);
 }
 
