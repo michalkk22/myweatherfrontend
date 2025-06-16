@@ -12,6 +12,7 @@ const markerIcon = new L.DivIcon({
 });
 
 const MapLocationPicker = ({ location, setLocation }: { location: LocationType, setLocation: (loc: LocationType) => void }) => {
+    // Need nested component to use useMap()
     const LocationMarker = () => {
         const map = useMap();
 
