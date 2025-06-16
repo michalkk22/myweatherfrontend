@@ -42,9 +42,14 @@ const ForecastTableRow = ({data}:{data: ForecastDataType}) => {
         return weatherNamesMap.get(code)?.icon ?? 'Unknown weather code';
     }
 
+    const formatDate = (dateStr: string) => {
+        const [year, month, day] = dateStr.split("-");
+        return `${day}/${month}/${year}`;
+    };
+
     return (
         <tr>
-            <td>{data.date}</td>
+            <td>{formatDate(data.date)}</td>
             <td>
                 <i className={`fa-solid ${getWeatherIcon(data.weatherCode)}`}></i> {getWeatherName(data.weatherCode)}
             </td>
