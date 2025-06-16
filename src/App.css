@@ -6,8 +6,9 @@
 
 [data-theme="dark"] {
     --bg-color: #1a104d;
-        --bg-accent-color: #241956;
-        --text-color: #b6b64d;
+    --bg-accent-color: #1f135a;
+    /* --bg-accent-color: #241956; */
+    --text-color: #b6b64d;
 }
 
 body {

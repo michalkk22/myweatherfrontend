@@ -16,8 +16,8 @@ const App = () => {
 
   return (
     <div className="main-container">
-      <ForecastTable location={location} />
       <ThemeButton />
+      <ForecastTable location={location} />
       <Footer location={location} />
     </div>
   );

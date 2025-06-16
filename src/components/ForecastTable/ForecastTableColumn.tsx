@@ -2,7 +2,7 @@ import React from "react";
 import { ForecastDataType } from "./types";
 import "./style.css"
 
-const ForecastTableRow = ({data}:{data: ForecastDataType}) => {
+const ForecastTableColumn = ({data}:{data: ForecastDataType}) => {
     const weatherNamesMap = new Map<number, { name: string; icon: string }>([
         [0, { name: 'Clear sky', icon: 'fa-sun' }],
         [1, { name: 'Mainly clear', icon: 'fa-sun' }],
@@ -48,17 +48,17 @@ const ForecastTableRow = ({data}:{data: ForecastDataType}) => {
     };
 
     return (
-        <tr>
-            <td>{formatDate(data.date)}</td>
-            <td>
+        <div className="forecast-table-column">
+            <div>{formatDate(data.date)}</div>
+            <div>
                 <i className={`fa-solid ${getWeatherIcon(data.weatherCode)}`}></i> {getWeatherName(data.weatherCode)}
-            </td>
-            <td>{data.temperatureMax} &deg;C</td>
-            <td>{data.temperatureMin} &deg;C</td>
-            <td>{data.energy.toFixed(2)} kWh</td>
-        </tr>
+            </div>
+            <div>{data.temperatureMax} &deg;C</div>
+            <div>{data.temperatureMin} &deg;C</div>
+            <div>{data.energy.toFixed(2)} kWh</div>
+        </div>
     );
 
 }
 
-export default ForecastTableRow;
+export default ForecastTableColumn;

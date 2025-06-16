@@ -1,8 +1,8 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { LocationType } from "../../types";
 import { ForecastDataType } from "./types";
-import ForecastTableRow from "./ForecastTableRow";
 import "./style.css"
+import ForecastTableColumn from "./ForecastTableColumn";
 
 const ForecastTable = ({location}:{location: LocationType}) => {
     const [forecastData, setForecastData] = useState<Array<ForecastDataType> | null>(null);
@@ -21,28 +21,24 @@ const ForecastTable = ({location}:{location: LocationType}) => {
 
     return (
         <div className="forecast-table-wrapper">
-            <table className="forecast-table">
-                <thead>
-                    <tr>
-                        <th>Date</th>
-                        <th>Weather</th>
-                        <th>Max temperature</th>
-                        <th>Min temperature</th>
-                        <th>Energy forecast</th>
-                    </tr>
-                </thead>
-                <tbody>
+            <div className="forecast-table">
+                <div className="forecast-table-head forecast-table-column">
+                    <div>Date</div>
+                    <div>Weather</div>
+                    <div>Max temperature</div>
+                    <div>Min temperature</div>
+                    <div>Energy forecast</div>
+                </div>
         {forecastData ? (
                         forecastData.map((element) => (
-                            <ForecastTableRow key={element.date} data={element} />
+                            <ForecastTableColumn key={element.date} data={element} />
                         ))
                     ) : (
-                        <tr>
-                            <td colSpan={5}>Loading...</td>
-                        </tr>
-                    )}
-                </tbody>
-            </table>
+                    <div>
+                        Loading...
+                    </div>
+                )}
+            </div>
         </div>
     );
 
