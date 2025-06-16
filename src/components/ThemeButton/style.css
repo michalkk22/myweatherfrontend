@@ -8,4 +8,5 @@
     height: fit-content;
     padding: 7px;
     line-height: 1.5em;
+    outline-color: unset;
 }
