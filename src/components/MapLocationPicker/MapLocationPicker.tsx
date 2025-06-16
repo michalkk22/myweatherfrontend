@@ -2,6 +2,14 @@ import React, { useEffect } from "react";
 import { MapContainer, Marker, Popup, TileLayer, useMap, useMapEvents } from 'react-leaflet'
 import "./style.css"
 import { LocationType } from "../../types";
+import L from "leaflet";
+
+const markerIcon = new L.DivIcon({
+    html: '<i class="fa-solid fa-location-dot" style="font-size:32px;color:red"></i>',
+    className: 'fa-leaflet-marker',
+    iconSize: [32, 32],
+    iconAnchor: [16, 32],
+});
 
 const MapLocationPicker = ({ location, setLocation }: { location: LocationType, setLocation: (loc: LocationType) => void }) => {
     const LocationMarker = () => {
@@ -19,7 +27,7 @@ const MapLocationPicker = ({ location, setLocation }: { location: LocationType, 
         }, [location, map])
 
         return (
-            <Marker position={[location.latitude, location.longitude]}>
+            <Marker position={[location.latitude, location.longitude]} icon={markerIcon}>
                 <Popup>
                     latitude: {location.latitude} <br />
                     longitude: {location.longitude}
