@@ -20,9 +20,15 @@ const Footer = ({ location }: { location: LocationType }) => {
 
     const roundAndFormatTemperature = (temp: number) => `${temp.toFixed(1)} \u00b0C`;
 
+    const footerSummary = (weather: string[]) => {
+        return weather[1] != "" ?  
+        <div>This week&apos;s weather will be mostly {weather.join(" and ")} </div>
+        : <div>This week&apos;s weather will be {weather[0]} </div>
+    }
+
     return <div className="footer-main">
         {footerData ? <div className="footer-weather">
-            <div>This week&apos;s weather will be mostly {footerData.weather.join(" and ")} </div>
+            {footerSummary(footerData.weather)}
             <div className="footer-items">
                 <div>Week:</div>
                 <div>Max Temp: {roundAndFormatTemperature(footerData.temperatureMax)}</div>
