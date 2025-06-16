@@ -20,7 +20,7 @@ const App = () => {
     <div className="main-container">
       <ThemeButton />
       <ForecastTable location={location} />
-      <MapLocationPicker currentLocation={location} />
+      <MapLocationPicker location={location} setLocation={setLocation} />
       <Footer location={location} />
     </div>
   );
