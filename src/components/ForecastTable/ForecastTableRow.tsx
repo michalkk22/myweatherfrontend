@@ -42,13 +42,18 @@ const ForecastTableRow = ({data}:{data: ForecastDataType}) => {
         return weatherNamesMap.get(code)?.icon ?? 'Unknown weather code';
     }
 
-    return <div className="forecast-table-row">
-        <div>{data.date}</div>
-        <div><i className={`fa-solid ${getWeatherIcon(data.weatherCode)}`}></i> {getWeatherName(data.weatherCode)}</div>
-        <div>{data.temperatureMax} &deg;C</div>
-        <div>{data.temperatureMin} &deg;C</div>
-        <div>{data.energy.toFixed(2)} kWh</div>
-    </div>
+    return (
+        <tr>
+            <td>{data.date}</td>
+            <td>
+                <i className={`fa-solid ${getWeatherIcon(data.weatherCode)}`}></i> {getWeatherName(data.weatherCode)}
+            </td>
+            <td>{data.temperatureMax} &deg;C</td>
+            <td>{data.temperatureMin} &deg;C</td>
+            <td>{data.energy.toFixed(2)} kWh</td>
+        </tr>
+    );
+
 }
 
 export default ForecastTableRow;

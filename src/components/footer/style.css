@@ -1,15 +1,9 @@
 .footer-main {
     width: 100%;
     position: absolute;
-    bottom: 0px;
+    bottom: 0;
     border-top: 1px solid black;
-}
-
-.footer-items {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+    background-color: white;
 }
 
 .footer-weather {
@@ -18,5 +12,25 @@
     flex-direction: column;
     align-items: center;
     gap: 20px;
-    padding: 10px 0 10px 0;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.footer-items {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+@media (max-width: 600px) {
+    .footer-items {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-items div {
+        font-size: 0.9em;
+    }
 }

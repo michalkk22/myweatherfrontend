@@ -19,12 +19,33 @@ const ForecastTable = ({location}:{location: LocationType}) => {
         getForecastData();
     },[location]);
 
-    return <div className="forecast-table-container">
+    return (
+        <div className="forecast-table-wrapper">
+            <table className="forecast-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Weather</th>
+                        <th>Max temperature</th>
+                        <th>Min temperature</th>
+                        <th>Energy forecast</th>
+                    </tr>
+                </thead>
+                <tbody>
         {forecastData ? (
-            forecastData.map((element) => <ForecastTableRow key={element.date} data={element} />)
-        )
-        : <div>Loading...</div>}
-    </div>
+                        forecastData.map((element) => (
+                            <ForecastTableRow key={element.date} data={element} />
+                        ))
+                    ) : (
+                        <tr>
+                            <td colSpan={5}>Loading...</td>
+                        </tr>
+                    )}
+                </tbody>
+            </table>
+        </div>
+    );
+
 }
 
 export default ForecastTable;

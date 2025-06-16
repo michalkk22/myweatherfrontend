@@ -22,13 +22,14 @@ const Footer = ({ location }: { location: LocationType }) => {
 
     return <div className="footer-main">
         {footerData ? <div className="footer-weather">
+            <div>This week weather will be mostly {footerData.weather.join(" and ")} </div>
             <div className="footer-items">
+                <div>Week:</div>
                 <div>Min Temp: {roundAndFormatTemperature(footerData.temperatureMin)}</div>
                 <div>Max Temp: {roundAndFormatTemperature(footerData.temperatureMax)}</div>
                 <div>Avg Pressure: {footerData.pressure.toFixed(0)} hPa</div>
                 <div>Avg Sunshine time: {footerData.sunshine.toFixed(1)} h</div>
             </div>
-            <div>This week on average weather will be {footerData.weather.join(" or ")} </div>
         </div> : <div>Loading...</div>}
     </div>
 }
