@@ -25,8 +25,8 @@ const Footer = ({ location }: { location: LocationType }) => {
             <div>This week&apos;s weather will be mostly {footerData.weather.join(" and ")} </div>
             <div className="footer-items">
                 <div>Week:</div>
-                <div>Min Temp: {roundAndFormatTemperature(footerData.temperatureMin)}</div>
                 <div>Max Temp: {roundAndFormatTemperature(footerData.temperatureMax)}</div>
+                <div>Min Temp: {roundAndFormatTemperature(footerData.temperatureMin)}</div>
                 <div>Avg Pressure: {footerData.pressure.toFixed(0)} hPa</div>
                 <div>Avg Sunshine time: {footerData.sunshine.toFixed(1)} h</div>
             </div>
