@@ -12,13 +12,13 @@
 
 .forecast-table th,
 .forecast-table td {
-    border: 1px solid black;
+    border: 1px solid var(--text-color);
 padding: 12px;
     text-align: left;
 }
 
 .forecast-table th {
-    background-color: #f2f2f2;
+    background-color: var(--bg-accent-color);
 }
 
 /* Responsive */
